@@ -1,0 +1,18 @@
+.banner{
+	width: 100%;
+	display: block;
+
+}
+
+.banner > .banner-image{
+	width: 100%;
+	display: block;
+}
+
+.darkBG{
+	background-color: #9999;
+}
+
+.darkerBG{
+	background-color: #6666;
+}
