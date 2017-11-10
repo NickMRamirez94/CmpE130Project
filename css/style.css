@@ -24,14 +24,6 @@
 	clear: both;
 }
 
-.main{
-
-	background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url(../html/mainimage.jpg);
-	height: 100vh;
-	background-position: center;
-	background-size: cover;
-
-}
 
 .about{
 	background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)),url(../html/mainimage.jpg);
@@ -51,22 +43,6 @@
 	font-weight: bold;
 }
 
-.hero{
-	position: absolute;
-	width: 1140px;
-	top: 50%;
-	left: 40%;
-	transform: translate(-50%, -50%);
-
-}
-
-.hero2{
-	position: absolute;
-	width: 1140px;
-	top: 58%;
-	left: 40%;
-	transform: translate(-50%, -50%);
-}
 
 .btn{
 	border: 1px solid white;
