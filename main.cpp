@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 
 const int SIZE = 5;
 const int INFINITE = 999999999;
@@ -10,6 +11,8 @@ public:
   graph(); //default constructor
   void printGraph();
   void findMST();
+  void findNearestNeighbor(); //STILL NEED TO DO
+  void findBruteForce(); //STILL NEED TO DO
 private:
   int cities[SIZE][SIZE]; //adj matrix representation of graph. Holds weights
   int city_names[SIZE]; //holds string names of city
@@ -132,6 +135,29 @@ void graph::findMST(){
 	printMST(mst, SIZE);
 }
 
+graph::findNearestNeighbor(){
+  //need to fill in
+}
+
+graph::findBruteForce(){
+  //need to fill in
+}
+
+void printMenu(){
+  for(int i = 0; i < 40; i++){
+    cout << '-' << endl;
+  }
+  cout << '|' << setw(17) << "MENU" << setw(17) << '|';
+  for(int i = 0; i < 40; i++){
+    cout << '-' << endl;
+  }
+  cout << "\n\nWELCOME TO THE TRAVELING SALESMAN SOLUTION\n";
+  cout << "\n\nPlease choose from the following:\n";
+  cout << "1. Solve using Minimum Spanning Tree\n";
+  cout << "2. Solve using a Nearest Neighbor Algorithm\n";
+  cout << "3. Solve using Brute Force *NOT RECOMMENDED*\n";
+}
+
 /*
 MAIN FUNCTION HERE
 */
@@ -139,6 +165,32 @@ MAIN FUNCTION HERE
 int main(){
 
   graph G;
+
+  printMenu();
+  int choice = -1;
+  do{
+    cin >> choice;
+    if (choice < 1 || choice > 3)
+      cout << "INVALID CHOICE! PLEASE CHOOSE AGAIN\n";
+  }while(choice < 1 || choice > 3);
+
+  switch(choice){
+    case 1:{
+      break;
+    }
+    case 2:
+    {
+      break;
+    }
+    case 3:
+    {
+      break;
+    }
+    default:
+    {
+      cout << "SORRY INVALID\n";
+    }
+  }
 
   return 0;
 }
