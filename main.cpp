@@ -32,6 +32,10 @@ graph::graph(){
     cities[i][i] = 0;
   };
 
+void graph::findNearestNeighbor(){
+  int MST[SIZE];
+}
+
 void graph::printGraph(){
   //top row format
   cout << "   ";
