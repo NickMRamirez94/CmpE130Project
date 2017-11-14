@@ -1,10 +1,10 @@
 Algorithm Project for CMPE 130
 ===============================
 
-Nicholas Ramirez and John Tumath
-San José State University
-College of Engineering/Computer Engineering Department
-CMPE 130, Advanced Algorithm Design
+Nicholas Ramirez and John Tumath  
+San José State University  
+College of Engineering/Computer Engineering Department  
+CMPE 130, Advanced Algorithm Design  
 
 Project Description
 ===================
