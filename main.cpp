@@ -22,6 +22,7 @@ public:
   void findBruteForce(); //STILL NEED TO DO
 private:
   //adj matrix representation of graph. Holds weights and is static
+  //this will be updated to include the graph that is in adjmatrixforJS.txt
   int cities[SIZE][SIZE] = {
                             {0,5,7,1,8},
                             {5,0,6,4,8},
