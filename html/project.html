@@ -34,10 +34,10 @@
           the path between 20 or more cities. This runs in O(n!), which is very
           slow.</br></br>To try out this Algorithm, please enter the number of
           cities you would like to calculate for.</br></br></p>
-          <form action="/action_page.php">
-            <input type="text" name="bforce" placeholder="LESS THAN 7"><br>
-            <input type="submit" value="Submit">
-          </form>
+
+          <input type="text" id="bforce" placeholder="LESS THAN 7"><br>
+          <input type="submit" value="Submit">
+
           </div>
         </div>
         <div class="col-sm-4">
@@ -51,10 +51,9 @@
            remainging cities until all cities have been visited and then head back to
             starting place.</br></br>To try out this Algorithm, please enter the number of
             cities you would like to calculate for.</br></br></p>
-            <form action="/action_page.php">
-              <input type="text" name="nneighbor" placeholder="# of cities"><br>
-              <input type="submit" value="Submit">
-            </form>
+
+            <input type="text" id="nneighbor" placeholder="# of cities"><br>
+            <input type="submit" value="Submit" onclick="findNearestNeighbor();">
           </div>
 
           <p id="demo"></p>
@@ -63,10 +62,10 @@
           <div>
             <h2 class="text-center">Dynamic Programming?</h2>
             <p class="text-center">Description of Dynamic Programming method goes here</p>
-            <form action="/action_page.php">
-              <input type="text" name="dprogram" placeholder="# of cities"><br>
-              <input type="submit" value="Submit">
-            </form>
+
+            <input type="text" id="dprogram" placeholder="# of cities"><br>
+            <input type="submit" value="Submit">
+
           </div>
         </div>
       </div>
@@ -79,74 +78,6 @@
     </footer>-->
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-    <script>
-
-
-    var cities = [
-                  [0,5,7,1,8],
-                  [5,0,6,4,8],
-                  [7,6,0,2,7],
-                  [1,4,2,0,6],
-                  [8,8,7,6,0]
-                  ];
-    //holds string names of city
-    var city_names = ["Los Angeles", "Anaheim", "San Francisco", "San Jose", "Sacramento"];
-
-    var visited = [];
-
-    //holds city order
-    var order = [];
-
-    var cost = [];
-
-    //Initialize all to false
-    for (var i = 0; i < 5; i++){
-      visited.push(false);
-    }
-    var min = 99999999;
-
-    var min_index = 0;
-    var order_index = 0;
-    var temp_min_index;
-    var text;
-
-    //initialize
-    order[order_index++] = 0;
-    visited[0] = true;
-
-    for(var i = 0; i < 5; i++)
-    {
-      temp_min_index = min_index;
-      min = 999999999;
-      for(var j = 0; j < 5; j++){
-        if ((cities[j][min_index] != 0) && (cities[j][min_index] < min) && (visited[j] == false)){
-          min = cities[j][min_index];
-          temp_min_index = j;
-        }
-      }
-
-      min_index = temp_min_index;
-      visited[min_index] = true;
-      order[order_index++] = min_index;
-    }
-
-    order[--order_index] = 0;
-
-    cost[0] = 0;
-
-    for (var i = 1; i < 6; i++){
-      cost [i] = cost[i-1] + cities[order[i-i]][order[i]];
-    }
-
-    cost[5] = cost[4] + cities[order[4]][order[0]];
-
-    text = "<table style='width:100%'><tr><th>City</th><th>Total Cost</th></tr>";
-    for (var i = 0; i < 6; i++){
-      text += "<tr><td>" + city_names[order[i]] + "</td>";
-      text += "<td>" + cost[i] + "</td></li>";
-    }
-    text += "</table>"
-    document.getElementById("demo").innerHTML = text;
-    </script>
+    <script src="../scripts/scripts.js"></script>
   </body>
 </html>
