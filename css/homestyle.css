@@ -61,3 +61,7 @@
 .btn-text:hover{
 	color: white;
 }
+
+.row-padding{
+	margin-top: 30px;
+}

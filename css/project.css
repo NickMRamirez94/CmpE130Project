@@ -1,8 +1,39 @@
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
+    font-family: monospace;
+    font-size: 125%;
 }
 
 th, td{
   text-align: center;
+}
+
+.top-buffer{
+  margin-top: 35px;
+}
+
+th{
+  background-color: #6886b7;
+  color: white;
+}
+
+.intro-writing{
+  font-family: fantasy;
+  font-size: 20px;
+}
+
+.head-writing{
+  font-size: 40px;
+}
+
+.banner{
+	width: 100%;
+	display: block;
+
+}
+
+.banner > .banner-image{
+	width: 100%;
+	display: block;
 }

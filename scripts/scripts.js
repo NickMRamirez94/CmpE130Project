@@ -3,8 +3,8 @@ function findNearestNeighbor(){
   var num1 = parseInt(document.getElementById("nneighbor").value);
   var size = 5;
 
-  if (num1 > size){
-    var error = "Number cannot be bigger than: " + size + "!"
+  if (num1 > size || num1 < 1){
+    var error = "Number cannot be bigger than: " + size + " OR Less than 1!"
     document.getElementById("demo").innerHTML = error;
   }
 

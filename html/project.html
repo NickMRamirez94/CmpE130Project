@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/project.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   </head>
 
   <body>
@@ -25,25 +26,32 @@
 
     <!--Introduction Row-->
     <div class="container-fluid">
-      <div class="row">
+      <div class="row top-buffer">
         <div class="col-sm-4">
           <div>
-            <h2 class="text-center">Brute Force</h2>
-            <p class="text-center">This will always give the optimal answer. HOWEVER, be careful
+            <h2 class="text-center head-writing">Brute Force</h2>
+            <div class="banner">
+              <img class="img-fluid" src="bruteforce.jpg">
+            </div>
+            <p class="text-center intro-writing">This will always give the optimal answer. HOWEVER, be careful
             because this is VERY SLOW! Not applicable when trying to compute
           the path between 20 or more cities. This runs in O(n!), which is very
           slow.</br></br>To try out this Algorithm, please enter the number of
           cities you would like to calculate for.</br></br></p>
 
-          <input type="text" id="bforce" placeholder="LESS THAN 7"><br>
-          <input type="submit" value="Submit">
-
+          <div class="input-group input-group-lg">
+            <input type="text" class="form-control "id="bforce" placeholder="LESS THAN 7" aria-describedby="sizing-addon1"><br>
+            <input type="submit" class="input-group-addon" value="Submit">
+          </div>
           </div>
         </div>
         <div class="col-sm-4">
           <div>
-            <h2 class="text-center">Nearest Neighbor</h2>
-            <p class="text-center">This will rarely give the optimal answer (especially
+            <h2 class="text-center head-writing">Nearest Neighbor</h2>
+            <div class="banner">
+              <img class="img-fluid" src="nearestneighbor.jpg">
+            </div>
+            <p class="text-center intro-writing">This will rarely give the optimal answer (especially
              for a lot of cities). HOWEVER, this is much faster than Brute Force. This will
             run in O(n^2). The Algorithm itself is also very simple and works in the following
            way: Look at all current cities neighbors. Choose city that has the shortest path from
@@ -51,21 +59,23 @@
            remainging cities until all cities have been visited and then head back to
             starting place.</br></br>To try out this Algorithm, please enter the number of
             cities you would like to calculate for.</br></br></p>
-
-            <input type="text" id="nneighbor" placeholder="# of cities"><br>
-            <input type="submit" value="Submit" onclick="findNearestNeighbor();">
+            <div class="input-group input-group-lg">
+              <input type="text" class="form-control" id="nneighbor" placeholder="# of cities" aria-describedby="sizing-addon1"><br>
+              <input type="submit" class="input-group-addon" value="Submit" onclick="findNearestNeighbor();">
+            </div>
           </div>
 
-          <p id="demo"></p>
+          <p class="top-buffer" id="demo"></p>
         </div>
         <div class="col-sm-4">
           <div>
-            <h2 class="text-center">Dynamic Programming?</h2>
-            <p class="text-center">Description of Dynamic Programming method goes here</p>
+            <h2 class="text-center head-writing">Dynamic Programming?</h2>
+            <p class="text-center intro-writing">Description of Dynamic Programming method goes here</p>
 
-            <input type="text" id="dprogram" placeholder="# of cities"><br>
-            <input type="submit" value="Submit">
-
+            <div class="input-group input-group-lg">
+              <input type="text" class="form-control" id="dprogram" placeholder="# of cities" aria-describedby="sizing-addon1"><br>
+              <input type="submit" class="input-group-addon" value="Submit">
+            </div>
           </div>
         </div>
       </div>
