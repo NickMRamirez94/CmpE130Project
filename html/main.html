@@ -10,12 +10,12 @@
      <link rel="stylesheet" href="../css/homestyle.css">
    </head>
 
-   <body>
+   <body style="background-color:white">
      <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark navbar-static-top">
        <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
            <li class="nav-item active"><a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a></li>
-           <li class="nav-item"><a class="nav-link" href="project.html">Project</a></li>
+           <li class="nav-item"><a class="nav-link" href="project2.html">Project</a></li>
            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
          </ul>
       </div>
@@ -26,7 +26,7 @@
   </div>
 
   <div class="container">
-    <div class="text-center">
+    <div class="text-center top-buffer">
       <h1>WELCOME TO THE</br>TRAVELING SALESMAN SOLUTION</h1>
     </div>
   </div>
@@ -34,26 +34,33 @@
   <div class="container">
     <div class="row row-padding">
       <div class="col-lg-6 col-sm-6 text-center mb-4">
-        <h5> The Traveling Salesman Problem (TSP) asks the following question:
-         "Given a list of cities and the distances between each pair of cities
-         what is the shortest possible route that vists each city exactly once
-         and returns to the origin city?" It is an NP-hard problem in combinatorial
-         optimization, important in operations research and theoretical computer science.
-        </h5>
-        <footer class="blockquote-footer">
-          <cite title="Source Title">Wikipedia.org</cite>
-        </footer>
+        <div class="card">
+          <h3 class="card-header">What's the problem?</h3>
+          <p class="card-text"> The Traveling Salesman Problem (TSP) asks the following question:
+           "Given a list of cities and the distances between each pair of cities
+           what is the shortest possible route that vists each city exactly once
+           and returns to the origin city?" It is an NP-hard problem in combinatorial
+           optimization, important in operations research and theoretical computer science.
+          </p>
+          <footer class="blockquote-footer">
+            <cite title="Source Title">Wikipedia.org</cite>
+          </footer>
+        </div>
       </div>
       <div class="col-lg-6 col-sm-6 text-center mb-4">
-        <h5>There are many routes to solving this problem. A <em>Brute Force</em> solution will
+        <div class="card">
+          <h3 class="card-header">What about the Solutions?</h3>
+        <p class="card-text">There are many routes to solving this problem. A <em>Brute Force</em> solution will
         give the optimal answer <b>ALWAYS</b>, but runs in O(n!). Hence, it is not the
         optimal choice of solution. A <em>Nearest Neighbor Algorithm</em> has a much
         faster run time, but rarely gives the most optimal choice. Using a <em>Minimum
         Spanning Tree</em> will run much faster than Brute Force and be more optimal than
-        a Nearest Neighbor Algorithm.</h5>
+        a Nearest Neighbor Algorithm.
+        </p>
 
-        <button class="button" style="vertical-align:middle"><a class="btn-text" href="project.html"><span>Take Me There</span></a></button>
+        <button class="button" style="vertical-align:middle"><a class="btn-text" href="project2.html"><span>Take Me There</span></a></button>
 
+        </div>
       </div>
     </div>
   </div>

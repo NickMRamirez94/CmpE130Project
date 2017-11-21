@@ -13,6 +13,10 @@
 	font-weight: bold;
 }
 
+.top-buffer{
+  margin-top: 35px;
+}
+
 .button {
   display: inline-block;
   border-radius: 5px;
