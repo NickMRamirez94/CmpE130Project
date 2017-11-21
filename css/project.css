@@ -37,3 +37,8 @@ th{
 	width: 100%;
 	display: block;
 }
+
+.my-citation{
+  float: right;
+  padding-right: 30px;
+}

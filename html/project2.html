@@ -75,17 +75,74 @@
     <!--Project Information-->
     <div class="container top-buffer">
       <div class="row">
-        <div class="col">
-          <p>Hello</p>
-          <img src="projectfunny.png" class="rounded float-right img-responsive" style="height:450px" alt="projectfunny">
+        <div class="col-6">
+          <div class="card">
+            <div class="card-header">
+            <h3 class="card-header text-center">Additional Information</h3>
+            </div>
+            <div class="card-block">
+              <p class="card-text text-center">
+                All three implementations use an adjancency matrix to solve the problem.
+                This is for a variety of reasons:
+              </p>
+              <ul>
+                <li>Graph is dense (complete)</li>
+                <li>Accessing a particular edge is extremely fast</li>
+                <li>Yes it takes more memory <b>BUT</b> the it's complete</li>
+              </ul>
+              <hr>
+              <h4 class="card-title text-center">Why would you want to use one over the other?</h5>
+              <hr>
+              <h6 class="card-subtitle mb-2 text-muted text-center">Brute Force</h6>
+              <p class="card-text text-center">
+                The most direct solution would be to try all permutations (ordered combinations) and
+                see which one is cheapest (using brute force search). The running time for this approach
+                lies within a polynomial factor of O(n!), the factorial of the number of cities, so this
+                solution becomes impractical even for only 20 cities.
+              </p>
+              <hr>
+              <h6 class="card-subtitle mb-2 text-muted text-center">Nearest Neighbor</h6>
+              <p class="card-text text-center">
+                The nearest neighbour algorithm was one of the first algorithms used to determine a solution
+                to the travelling salesman problem. In it, the salesman starts at a random city and repeatedly
+                visits the nearest city until all have been visited. It quickly yields a short tour, but usually
+                not the optimal one. The nearest neighbour algorithm is easy to implement and executes quickly, but
+                it can sometimes miss shorter routes which are easily noticed with human insight, due to its "greedy"
+                nature. As a general guide, if the last few stages of the tour are comparable in length to the first stages,
+                then the tour is reasonable; if they are much greater, then it is likely that there are much better tours.
+              </p>
+              <hr>
+              <h6 class="card-subtitle mb-2 text-muted text-center">Last Approach</h6>
+              <p class="card-text text-center">
+                The most direct solution would be to try all permutations (ordered combinations) and
+                see which one is cheapest (using brute force search). The running time for this approach
+                lies within a polynomial factor of O(n!), the factorial of the number of cities, so this
+                solution becomes impractical even for only 20 cities.
+              </p>
+              <a class="btn btn-secondary" href="#" role="button">View Details >></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6">
+          <img src="projectfunny.png" class="rounded img-responsive" style="height:450px" alt="projectfunny">
+          <div class="card top-buffer">
+            <img class="card-img-top" src="BigO.png" alt="Card image cap">
+            <div class="card-block">
+              <h4 class="card-title text-center">Running Time</h4>
+              <p class="card-text text-center">As you can see, the running time of Brute Force O(n!) is much slower than
+              any other option
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- Footer -->
-    <footer class="py-5 bg-dark">
+    <footer class="py-5 bg-dark top-buffer">
       <div class="container">
-        <p class="m-0 text-center text-white copyright" style="float:left">Group Name</p>
+        <p class="m-0 text-center text-white copyright" style="float:left">Nick Ramirez and John Tumath</p>
         <p class="m-0 text-center text-white" style="float:right"> Traveling Salesman Solution</p>
       </div>
     </footer>
