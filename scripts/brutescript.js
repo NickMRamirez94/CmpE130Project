@@ -1,8 +1,8 @@
 
 
 var best_distance = 999999999,
-    best_path = new Array();
-    current_cities = new Array();
+    best_path = [],
+    current_cities = [];
 
 var distance_map =[
                   [0,5,7,1,8],
@@ -41,7 +41,8 @@ function brute_force_path(best_path, best_distance, current_cities, remaining_ci
     {
       for(var i = 0; i < remaining_cities.length; i++)
       {
-        var temp_current = current_cities;
+        var temp_current = [];
+        temp_current = current_cities;
         var temp_remaining = remaining_cities;
         temp_current.push(temp_remaining[i]);
         temp_remaining.splice(i,1);
