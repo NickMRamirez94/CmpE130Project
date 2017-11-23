@@ -39,6 +39,12 @@ function brute_total_distance(city_list)
     }
 };
 
+/*
+This creates all possible permutations of the given array using the 
+Heap's algorthim found at
+https://en.wikipedia.org/wiki/Heap's_algorithm
+*/
+
 function brute_force_path(city_array, output, n)
 {  
  n = n || city_array.length;
