@@ -11,6 +11,17 @@ var distance_map =[
                   [8,8,7,6,0]
                   ];
 
+function brute_total_distance(city_list)
+{
+  var distance = distance_map[0][city_list[0]];
+  for(var i = 0; i < city_list.length-1; i++)
+  {
+    distance = distance + distance_map[city_list[i]][city_list[i+1]];
+  }
+  distance = distance + distance_map[city_list[city_list.length-1]][0];
+  return distance;
+}
+
 function brute_force_path(best_path, best_distance, current_cities, remaining_cities)
 {
 
@@ -19,7 +30,7 @@ function brute_force_path(best_path, best_distance, current_cities, remaining_ci
       if(brute_total_distance(current_cities) < best_distance)
       {
         best_distance = brute_total_distance(current_cities);
-        best_path = brute_total_distance(current_cities);
+        best_path = current_cities;
       }
     }
     else
@@ -35,13 +46,3 @@ function brute_force_path(best_path, best_distance, current_cities, remaining_ci
     }
   }
 
-function brute_total_distance(city_list)
-{
-  var distance = distance_map[0][city_list[0]];
-  for(var i = 0; i < city_list.length-1; i++)
-  {
-    distance = distance + distance_map[city_list[i]][city_list[i+1]];
-  }
-  distance = distance + distance_map[city_list[city_list.length-1]][0];
-  return distance;
-}
