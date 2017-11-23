@@ -15,50 +15,51 @@ var distance_map =[
 var test_list = [1,2,3,4];
 var city_names = ["Los Angeles", "Anaheim", "San Francisco", "San Jose", "Sacramento"];
 
+var swap = function (array, pos1, pos2) 
+{
+  var temp = array[pos1];
+  array[pos1] = array[pos2];
+  array[pos2] = temp;
+};
+
 function brute_total_distance(city_list)
 {
-  var i;
+  console.log(city_list);
   var distance = distance_map[0][city_list[0]];
-  for(i = 0; i < city_list.length-1; i++)
+  for(var i = 0; i < city_list.length-1; i++)
   {
     distance += distance_map[city_list[i]][city_list[i+1]];
   }
   distance += distance_map[(city_list.length)-1][0];
-  return distance;
-}
-
-function brute_force_path(current_cities, remaining_cities)
-{
-  var i;
-  if(remaining_cities.length === 0)
-  {
-    console.log("Comparison",current_cities,remaining_cities);
-    if(brute_total_distance(current_cities) < best_distance)
+  if(distance < best_distance)
     {
-      best_distance = brute_total_distance(current_cities);
-      best_path = current_cities;
+      best_distance = distance;
+      best_path = city_list;
       best_path.push(0);
-      console.log(current_cities);
-      console.log(remaining_cities);
+    }
+};
+
+function brute_force_path(city_array, output, n)
+{  
+ n = n || city_array.length;
+  if (n === 1) {
+    output(city_array);
+  } else {
+    for (var i = 1; i <= n; i += 1) {
+      brute_force_path(city_array, output, n - 1);
+      if (n % 2) {
+        var j = 1;
+      } else {
+        var j = i;
+      }
+      swap(city_array, j - 1, n - 1);
     }
   }
-  else
-  {
-    for(i = 0; i < remaining_cities.length; i++)
-    {
-      var temp_current = current_cities;
-      var temp_remaining = remaining_cities;
-      temp_current.push(temp_remaining[i]);
-      temp_remaining.splice(i,1);
-      console.log("Before recusive call",temp_current, temp_remaining);
-      brute_force_path(temp_current, temp_remaining);
-      console.log("End of Loop",temp_current, temp_remaining);
-    }
-  }
-}
+};
+
 
   console.log("Start here");
-  brute_force_path(blank_cities, test_list);
+  brute_force_path(test_list, brute_total_distance);
   console.log("Best Distance: ");
   console.log(best_distance);
   console.log("Best Path: ");
