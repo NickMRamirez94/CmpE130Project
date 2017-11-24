@@ -18,7 +18,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item"><a class="nav-link" href="main.html">Home <span class="sr-only">(current)</span></a></li>
-          <li class="nav-item active"><a class="nav-link" href="#">Project</a></li>
+          <li class="nav-item active"><a class="nav-link" href="project2.html">Project</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
         </ul>
       </div>
@@ -31,17 +31,77 @@
         <hr>
         <p>Remember...this does not always (and rarely does) give the most optimal solution; however, it is very fast!</p>
         <p class="lead">
-          <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+          <a class="btn btn-primary btn-lg" href="#identifier" role="button">Learn more</a>
         </p>
       </div>
     </div>
 
+    <div class="container" id="identifier">
+
+      <div class="row top-buffer">
+
+        <div class="col-sm-6">
+          <div class="card">
+            <img class="card-img-top" src="nearestneighbor.jpg" alt="n2Graph">
+            <div class="card-block">
+              <h4 class="card-title text-center">How Does it Work?</h4>
+              <p class="card-text">This solution uses a very strong greedy strategy. This is because it
+              looks at the current city and will go to the closest city that it's connected to. It will continue to
+              do this until it visits all of the cities. This is a great strategy because the algorithm is a lot
+              faster than a brute force approach, but it can often miss a much shorter path due to its greedy
+              nature. Therefore, it provides a nice, yet often not optimal solution.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6">
+          <div class="card">
+            <img class="card-img-top" style="height:275px" src="n2.png" alt="n2Graph">
+            <div class="card-block">
+              <h4 class="card-title text-center">Running Time</h4>
+              <p class="card-text">The running time of the Nearest Neighbor Algorithm is
+              O(n^2), which is fairly fast given the issue at hand. Therefore, this makes for a decent choice seeing
+              that it will work for a large number of cities and it will give you the answer relatively quickly.
+              Additionally, the graph shows the rate of growth for this algorithm. For small input values the algorithm
+              still computes the solution quickly; however, fails to find the path quickly for large input values.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div><!--End First Row-->
+
+      <div class="row top-buffer">
+
+        <div class="col-sm-6">
+          <h4 class="display-5">To use this, please enter the number of cities you need to visit:</h4>
+        </div>
+
+        <div class="col-sm-6">
+          <div class="input-group input-group-lg">
+            <input type="text" class="form-control" id="nneighbor" placeholder="# of cities" aria-describedby="sizing-addon1"><br>
+            <input type="submit" class="input-group-addon" value="Submit" onclick="findNearestNeighbor();">
+          </div>
+        </div>
+
+      </div><!--End Second Row-->
+
+      <div class="row">
+        <div class="col">
+          <p class="top-buffer" id="demo"></p>
+        </div>
+      </div><!--End Third Row-->
+
+    </div>
+
     <!-- Footer -->
-    <!--<footer class="py-5 bg-dark">
+    <footer class="py-5 bg-dark top-buffer">
       <div class="container">
-        <p class="m-0 text-center text-white"> Traveling Salesman Solution</p>
+        <p class="m-0 text-center text-white copyright" style="float:left">Nick Ramirez and John Tumath</p>
+        <p class="m-0 text-center text-white" style="float:right"> Traveling Salesman Solution</p>
       </div>
-    </footer>-->
+    </footer>
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
     <script src="../scripts/scripts.js"></script>

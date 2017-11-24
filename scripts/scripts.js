@@ -70,10 +70,10 @@ function findNearestNeighbor(){
 
     cost[num1] = cost[num1-1] + cities[order[num1-1]][order[0]];
 
-    text = "<table style='width:100%'><tr><th>City</th><th>Total Cost</th></tr>";
-    for (var i = 0; i < num1+1; i++){
-      text += "<tr><td>" + city_names[order[i]] + "</td>";
-      text += "<td>" + cost[i] + "</td></li>";
+    text = "<table style='width:75%'><tr><th>City</th><th>Total Cost</th></tr>";
+    for (var i = 0; i < num1; i++){
+      text += "<tr><td>" + city_names[order[i]] + "-->" + city_names[order[i+1]] + "</td>";
+      text += "<td>" + cost[i+1] + "</td></li>";
     }
     text += "</table>"
     msg.innerHTML = text;
