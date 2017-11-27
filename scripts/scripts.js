@@ -29,6 +29,8 @@ function findNearestNeighbor(){
 
     var cost = [];
 
+    var t0 = performance.now();
+
     //Initialize all to false
     for (var i = 0; i < num1; i++){
       visited.push(false);
@@ -68,14 +70,21 @@ function findNearestNeighbor(){
       cost [i] = cost[i-1] + cities[order[i-i]][order[i]];
     }
 
+    var t1 = performance.now();
+
     cost[num1] = cost[num1-1] + cities[order[num1-1]][order[0]];
 
-    text = "<table style='width:75%'><tr><th>City</th><th>Total Cost</th></tr>";
+    text = "<table style='width:75%'><tr><th>From</th><th>To</th><th>Travel Cost</th></tr>";
     for (var i = 0; i < num1; i++){
-      text += "<tr><td>" + city_names[order[i]] + "-->" + city_names[order[i+1]] + "</td>";
+      text += "<tr><td>" + city_names[order[i]] + "</td><td>" + city_names[order[i+1]] + "</td>";
       text += "<td>" + cost[i+1] + "</td></li>";
     }
     text += "</table>"
+
+    text += "<table style='width:60%'><tr><th>Total Distance</th><th>Time to Compute (milliseconds)</th></tr>"
+    text += "<tr><td>" + cost[num1] + "</td><td>" + Number((t1-t0).toFixed(5)); + "</td></tr>"
+    text += "</table>"
+
     msg.innerHTML = text;
   }
 }
