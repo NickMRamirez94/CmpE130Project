@@ -36,14 +36,41 @@
       </div>
     </div>
 
-    <!-- Footer -->
-    <!--<footer class="py-5 bg-dark">
+          <div class="row top-buffer">
+
+        <div class="col-sm-6">
+          <h4 class="display-5">To use this, please enter the number of cities you need to visit:</h4>
+        </div>
+
+        <div class="col-sm-6">
+          <div class="input-group input-group-lg">
+            <input type="text" class="form-control" id="nneighbor" placeholder="# of cities" aria-describedby="sizing-addon1"><br>
+            <input type="submit" class="input-group-addon" value="Submit" onclick="brute_main();">
+          </div>
+        </div>
+
+      </div><!--End Second Row-->
+
+      <div class="row">
+        <div class="col">
+          <p class="top-buffer" id="demo"></p>
+        </div>
+      </div><!--End Third Row-->
+
+    </div>
+
+
+   <!-- Footer -->
+    <footer class="py-5 bg-dark top-buffer">
       <div class="container">
-        <p class="m-0 text-center text-white"> Traveling Salesman Solution</p>
+        <p class="m-0 text-center text-white copyright" style="float:left">Nick Ramirez and John Tumath</p>
+        <p class="m-0 text-center text-white" style="float:right"> Traveling Salesman Solution</p>
       </div>
-    </footer>-->
+    </footer>
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="../scripts/adjmatrix.js"></script>
+    <script src="../scripts/cities.js"></script>
     <script src="../scripts/brutescript.js"></script>
   </body>
 </html>
