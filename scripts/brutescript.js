@@ -86,7 +86,7 @@ function make_list(num1)
   var list = [];
   for(var i = 0; i < num1; )
   {
-    var x = Math.floor(Math.random() * 75); ;
+    var x = Math.floor(Math.random() * adj_matrix_size); ;
     if (!list.includes(x))
     {
       list.push(x);
@@ -100,7 +100,7 @@ function make_list(num1)
 function brute_main()
 {
   var num1 = parseInt(document.getElementById("nneighbor").value);
-  var size = 75;
+  var size = adj_matrix_size;
 
   if (num1 > size || num1 < 1)
   {
