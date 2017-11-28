@@ -1,7 +1,7 @@
 #include <iostream>
 #include <stdlib.h>
 
-const int SIZE = 75;
+const int SIZE = 370;
 
 using namespace std;
 
