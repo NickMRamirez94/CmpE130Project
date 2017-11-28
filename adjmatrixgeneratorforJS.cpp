@@ -12,7 +12,7 @@ int main(){
 
   for (int i = 0; i < SIZE; i++){
     for(int j = 0; j < i; j++){
-      temp = rand() % 200;
+      temp = (rand() % 200) +1;
       adjmatrix[i][j] = temp;
       adjmatrix[j][i] = temp;
     }

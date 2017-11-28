@@ -9,6 +9,8 @@ var cities = [
 //holds string names of city
 var city_names = ["Los Angeles", "Anaheim", "San Francisco", "San Jose", "Sacramento"];
 
+var size = 5;
+
 var visited = [];
 
 //holds city order
@@ -19,7 +21,6 @@ var cost = [];
 
 function dynamic(){
   var num1 = parseInt(document.getElementById("nneighbor").value);
-  var size = 5;
 
   if (num1 > size || num1 < 1){
     var error = "Number cannot be bigger than: " + size + " OR Less than 1!"
@@ -52,12 +53,12 @@ function dynamic(){
   }
 }
 
-function least(int c)
+function least(c)
 {
     var i,nc=999;
     var min=999,kmin;
 
-    for(i=0;i < n;i++)
+    for(i=0;i < size;i++)
     {
         if((cities[c][i]!=0)&&(visited[i]==false))
             if(cities[c][i]+cities[i][c] < min)
@@ -74,7 +75,7 @@ function least(int c)
     return nc;
 }
 
-function dynamicHelper(var city)
+function dynamicHelper(city)
 {
 
     var i,ncity;
@@ -95,5 +96,5 @@ function dynamicHelper(var city)
         return;
     }
 
-    mincost(ncity);
+    dynamicHelper(ncity);
 }
