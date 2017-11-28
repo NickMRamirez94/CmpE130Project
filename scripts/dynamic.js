@@ -19,7 +19,12 @@ var order_counter = 0;
 
 var cost = [];
 
+var t1 = 0;
+var t2 = 0;
+var total_time = 0;
+
 function dynamic(){
+  t0 = performance.now();
   var num1 = parseInt(document.getElementById("nneighbor").value);
 
   if (num1 > size || num1 < 1){
@@ -32,10 +37,9 @@ function dynamic(){
     for(var i = 0; i < num1; i++){
       visited[i] = false;
     }
-    var t0 = performance.now();
     dynamicHelper(0);
-    var t1 = performance.now();
-    var total_time = t1 = t0;
+    t1 = performance.now();
+    total_time = t1 = t0;
 
     var text;
     text = "<table style='width:75%'><tr><th>From</th><th>To</th><th>Travel Cost</th></tr>";
@@ -45,8 +49,10 @@ function dynamic(){
     }
     text += "</table>"
 
+    console.log(total_time);
+
     text += "<table style='width:60%'><tr><th>Total Distance</th><th>Time to Compute (milliseconds)</th></tr>"
-    text += "<tr><td>" + cost[num1] + "</td><td>" + Number((t1-t0).toFixed(5)); + "</td></tr>"
+    text += "<tr><td>" + cost[num1] + "</td><td>" + Number((total_time).toFixed(10)); + "</td></tr>"
     text += "</table>"
 
     msg.innerHTML = text;
@@ -55,22 +61,21 @@ function dynamic(){
 
 function least(c)
 {
-    var i,nc=999;
-    var min=999,kmin;
+    var nc=999;
+    var min=999;
 
-    for(i=0;i < size;i++)
+    for(var i=0;i < size;i++)
     {
         if((cities[c][i]!=0)&&(visited[i]==false))
-            if(cities[c][i]+cities[i][c] < min)
+            if(cities[c][i] < min)
             {
-                min=cities[i][0]+cities[c][i];
-                kmin=cities[c][i];
+                min=cities[c][i];
                 nc=i;
             }
     }
 
     if(min!=999){
-        cost+=kmin;
+      cost[order_counter] = min;
     }
     return nc;
 }
@@ -78,7 +83,7 @@ function least(c)
 function dynamicHelper(city)
 {
 
-    var i,ncity;
+    var ncity;
 
     visited[city]=true;
 
@@ -86,15 +91,19 @@ function dynamicHelper(city)
 
     ncity=least(city);
 
-    //visited all cities so take on starting city
+    console.log("Next City: ");
+    console.log(ncity);
+
+    //visited all cities so tack on starting city
     if(ncity==999)
     {
         ncity=0;
         order[order_counter] = ncity;
-        cost[order_counter] = cities[order[order_counter-1]][order[order_counter-1]];
+        cost[order_counter] = cities[order[order_counter-1]][order[order_counter]];
 
         return;
     }
-
-    dynamicHelper(ncity);
+    else{
+      dynamicHelper(ncity);
+    }
 }
