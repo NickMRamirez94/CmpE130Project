@@ -1,11 +1,5 @@
 var msg = document.getElementById("demo");
-var cities = [
-              [0,5,7,1,8],
-              [5,0,6,4,8],
-              [7,6,0,2,7],
-              [1,4,2,0,6],
-              [8,8,7,6,0]
-              ];
+var cities = adj_matrix;
 //holds string names of city
 var city_names = ["Los Angeles", "Anaheim", "San Francisco", "San Jose", "Sacramento"];
 
@@ -39,7 +33,7 @@ function dynamic(){
     }
     dynamicHelper(0);
     t1 = performance.now();
-    total_time = t1 = t0;
+    total_time = t1 - t0;
 
     var text;
     text = "<table style='width:75%'><tr><th>From</th><th>To</th><th>Travel Cost</th></tr>";
@@ -103,7 +97,6 @@ function dynamicHelper(city)
 
         return;
     }
-    else{
-      dynamicHelper(ncity);
-    }
+
+    dynamicHelper(ncity);
 }
