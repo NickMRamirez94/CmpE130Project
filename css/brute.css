@@ -1,0 +1,48 @@
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+
+    font-size: 125%;
+}
+
+table{
+  margin: auto;
+}
+
+th, td{
+  text-align: center;
+}
+
+.top-buffer{
+  margin-top: 35px;
+}
+
+th{
+  background-color: red;
+  color: white;
+}
+
+.intro-writing{
+  font-family: arial;
+  font-size: 20px;
+}
+
+.head-writing{
+  font-size: 40px;
+}
+
+.banner{
+	width: 100%;
+	display: block;
+
+}
+
+.banner > .banner-image{
+	width: 100%;
+	display: block;
+}
+
+.my-citation{
+  float: right;
+  padding-right: 30px;
+}

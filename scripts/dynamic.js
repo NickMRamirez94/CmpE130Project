@@ -49,7 +49,7 @@ function dynamic(){
     }
     text += "</table>"
 
-    console.log(total_time);
+    console.log(total_time, t0, t1);
 
     text += "<table style='width:60%'><tr><th>Total Distance</th><th>Time to Compute (milliseconds)</th></tr>"
     text += "<tr><td>" + cost[num1] + "</td><td>" + Number((total_time).toFixed(10)); + "</td></tr>"
