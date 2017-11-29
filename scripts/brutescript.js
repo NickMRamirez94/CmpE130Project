@@ -16,6 +16,13 @@ var swap = function (array, pos1, pos2)
   array[pos2] = temp;
 };
 
+/*
+Takes in a list of cities in path order, calculates the total sum of distances between each
+of the locations, then performs a check on that distance agaisnt the best distance
+found. If the new distance is better, it will update the best_distance and best_path
+variables to the new path results.
+*/
+
 function brute_total_distance(working_list)
 {
   console.log(working_list);
@@ -68,6 +75,8 @@ function brute_force_path(city_array, output, n)
   }
 };
 
+
+//Prints out the path table in HTML
 function print_route_table(best_path)
 {
   text = "<table style='width:80%'><tr><th>From</th>th>To</th><th>Travel Cost</th></tr>";
@@ -81,7 +90,9 @@ function print_route_table(best_path)
   msg.innerHTML = text;
 };
 
-function make_list(num1)
+
+//Creates a list of random cities to visit, not used in demo
+function make_list_random(num1)
 {
   var list = [];
   for(var i = 0; i < num1; )
@@ -94,6 +105,14 @@ function make_list(num1)
     }
   }
   console.log(list);
+  test_list = list;
+}
+
+//Generate a non-random list of i cities
+function make_list(num1)
+{
+  var list = [];
+  for(var i = 1; i < num1; i++) list.push(i);
   test_list = list;
 }
 
@@ -121,7 +140,6 @@ function brute_main()
     console.log(best_distance);
     console.log("Best Path: ");
     console.log(best_path);
-    console.log("Call to brute_force_path took " + (t1 - t0) + " milliseconds.");
     text = "<table style='width:60%'><tr><th>From</th><th>To</th><th>Travel Cost</th></tr>";
     for (var i = 0; i < best_path.length-1; i++)
     {
@@ -132,7 +150,7 @@ function brute_main()
     text += "</table>"
     text += "<table style='width:40%'><tr><th>Total Distance</th><th>Time to Compute (milliseconds)</th></tr>";
     text += "<tr><td>" + best_distance + "</td>";
-      text += "<td>" + Number((t1-t0).toFixed(5)); + "</td></li>";
+    text += "<td>" + Number((t1-t0).toFixed(5)); + "</td></li>";
     msg.innerHTML = text;
   }
 };
