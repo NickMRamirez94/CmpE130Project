@@ -1,7 +1,7 @@
 function findNearestNeighbor(){
 
   var num1 = parseInt(document.getElementById("nneighbor").value);
-  var size = 5;
+  var size = adj_matrix_size;
 
   if (num1 > size || num1 < 1){
     var error = "Number cannot be bigger than: " + size + " OR Less than 1!"
@@ -12,15 +12,9 @@ function findNearestNeighbor(){
 
     var msg = document.getElementById("demo");
 
-    var cities = [
-                  [0,5,7,1,8],
-                  [5,0,6,4,8],
-                  [7,6,0,2,7],
-                  [1,4,2,0,6],
-                  [8,8,7,6,0]
-                  ];
+    var cities = adj_matrix;
+
     //holds string names of city
-    var city_names = ["Los Angeles", "Anaheim", "San Francisco", "San Jose", "Sacramento"];
 
     var visited = [];
 
@@ -67,7 +61,7 @@ function findNearestNeighbor(){
     cost[0] = 0;
 
     for (var i = 1; i < num1 + 1; i++){
-      cost [i] = cost[i-1] + cities[order[i-i]][order[i]];
+      cost [i] = cities[order[i-i]][order[i]];
     }
 
     var t1 = performance.now();
@@ -81,8 +75,13 @@ function findNearestNeighbor(){
     }
     text += "</table>"
 
+    var sum = 0;
+    for (var i = 0; i < num1; i++){
+      sum += cost[i];
+    }
+
     text += "<table style='width:60%'><tr><th>Total Distance</th><th>Time to Compute (milliseconds)</th></tr>"
-    text += "<tr><td>" + cost[num1] + "</td><td>" + Number((t1-t0).toFixed(5)); + "</td></tr>"
+    text += "<tr><td>" + sum + "</td><td>" + Number((t1-t0).toFixed(5)); + "</td></tr>"
     text += "</table>"
 
     msg.innerHTML = text;

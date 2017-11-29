@@ -1,9 +1,8 @@
 var msg = document.getElementById("demo");
 var cities = adj_matrix;
 //holds string names of city
-var city_names = ["Los Angeles", "Anaheim", "San Francisco", "San Jose", "Sacramento"];
 
-var size = 5;
+var size = adj_matrix_size;
 
 var visited = [];
 
@@ -17,9 +16,14 @@ var t1 = 0;
 var t2 = 0;
 var total_time = 0;
 
+var ncity;
+var pcity;
+
+var num1;
+
 function dynamic(){
   t0 = performance.now();
-  var num1 = parseInt(document.getElementById("nneighbor").value);
+  num1 = parseInt(document.getElementById("nneighbor").value);
 
   if (num1 > size || num1 < 1){
     var error = "Number cannot be bigger than: " + size + " OR Less than 1!"
@@ -43,7 +47,7 @@ function dynamic(){
     }
     text += "</table>"
 
-    console.log(total_time, t0, t1);
+    console.log(total_time);
 
     text += "<table style='width:60%'><tr><th>Total Distance</th><th>Time to Compute (milliseconds)</th></tr>"
     text += "<tr><td>" + cost[num1] + "</td><td>" + Number((total_time).toFixed(10)); + "</td></tr>"
@@ -58,7 +62,7 @@ function least(c)
     var nc=999;
     var min=999;
 
-    for(var i=0;i < size;i++)
+    for(var i=0;i < num1;i++)
     {
         if((cities[c][i]!=0)&&(visited[i]==false))
             if(cities[c][i] < min)
@@ -77,16 +81,20 @@ function least(c)
 function dynamicHelper(city)
 {
 
-    var ncity;
 
     visited[city]=true;
 
     order[order_counter++] = city;
 
+    pcity = ncity;
     ncity=least(city);
 
-    console.log("Next City: ");
-    console.log(ncity);
+    if (ncity != 999){
+      var temp = cities[pcity][ncity]
+
+      console.log("Distance: ", temp);
+      console.log("Next City: ", ncity);
+    }
 
     //visited all cities so tack on starting city
     if(ncity==999)
