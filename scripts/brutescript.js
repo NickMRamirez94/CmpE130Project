@@ -33,7 +33,6 @@ function brute_total_distance(working_list)
     distance += distance_map[city_list[i]][city_list[i+1]];
   }
   distance += distance_map[city_list[((city_list.length)-1)]][0];
-  console.log("Distance Check:",count, city_list, best_path, distance);
   count++;
   if(distance < best_distance)
     {
@@ -112,7 +111,7 @@ function make_list_random(num1)
 function make_list(num1)
 {
   var list = [];
-  for(var i = 1; i < num1; i++) list.push(i);
+  for(var i = 0; i < num1; i++) list.push(i+1);
   test_list = list;
 }
 
