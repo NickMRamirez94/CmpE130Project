@@ -68,21 +68,21 @@ function findNearestNeighbor(){
 
     cost[num1] = cost[num1-1] + cities[order[num1-1]][order[0]];
 
-    text = "<table style='width:75%'><tr><th>From</th><th>To</th><th>Travel Cost</th></tr>";
+    text = "<table class='table table-bordered'><thead><tr><th>From</th><th>To</th><th>Travel Cost</th></tr></thead>";
     for (var i = 0; i < num1; i++){
       text += "<tr><td>" + city_names[order[i]] + "</td><td>" + city_names[order[i+1]] + "</td>";
       text += "<td>" + cost[i+1] + "</td></li>";
     }
-    text += "</table>"
+    text += "</table>";
 
     var sum = 0;
     for (var i = 0; i < num1; i++){
       sum += cost[i];
     }
 
-    text += "<table style='width:60%'><tr><th>Total Distance</th><th>Time to Compute (milliseconds)</th></tr>"
-    text += "<tr><td>" + sum + "</td><td>" + Number((t1-t0).toFixed(5)); + "</td></tr>"
-    text += "</table>"
+    text += "<table class='table table-bordered'><tr><th>Total Distance</th><th>Time to Compute (milliseconds)</th></tr>"
+    text += "<tr><td>" + sum + "</td><td>" + Number((t1-t0).toFixed(5)); + "</td></tr>";
+    text += "</table>";
 
     msg.innerHTML = text;
   }

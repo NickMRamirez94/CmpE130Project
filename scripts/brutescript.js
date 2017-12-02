@@ -9,7 +9,7 @@ var distance_map = adj_matrix;
 var test_list = [4,3,2,1];
 
 
-var swap = function (array, pos1, pos2) 
+var swap = function (array, pos1, pos2)
 {
   var temp = array[pos1];
   array[pos1] = array[pos2];
@@ -45,27 +45,27 @@ function brute_total_distance(working_list)
 };
 
 /*
-This creates all possible permutations of the given array using the 
+This creates all possible permutations of the given array using the
 Heap's algorthim found at
 https://en.wikipedia.org/wiki/Heap's_algorithm
 */
 
 function brute_force_path(city_array, output, n)
-{  
+{
  n = n || city_array.length;
-  if (n === 1) 
+  if (n === 1)
   {
     output(city_array);
-  } 
-  else 
+  }
+  else
   {
     for (var i = 1; i <= n; i += 1) {
       brute_force_path(city_array, output, n-1);
-      if (n % 2) 
+      if (n % 2)
       {
         var j = 1;
-      } 
-      else 
+      }
+      else
       {
         var j = i;
       }
@@ -78,7 +78,7 @@ function brute_force_path(city_array, output, n)
 //Prints out the path table in HTML
 function print_route_table(best_path)
 {
-  text = "<table style='width:80%'><tr><th>From</th>th>To</th><th>Travel Cost</th></tr>";
+  text = "<table class='table table-bordered'><tr><th>From</th>th>To</th><th>Travel Cost</th></tr>";
   for (var i = 0; i < best_path.length-1; i++)
   {
     text += "<tr><td>" + city_names[best_path[i]] + "</td>";
@@ -139,7 +139,7 @@ function brute_main()
     console.log(best_distance);
     console.log("Best Path: ");
     console.log(best_path);
-    text = "<table style='width:60%'><tr><th>From</th><th>To</th><th>Travel Cost</th></tr>";
+    text = "<table class='table table-bordered'><thead><tr><th>From</th><th>To</th><th>Travel Cost</th></tr></thead>";
     for (var i = 0; i < best_path.length-1; i++)
     {
       text += "<tr><td>" + city_names[best_path[i]] + "</td>";
@@ -147,10 +147,9 @@ function brute_main()
       text += "<td>" + distance_map[best_path[i]][best_path[i+1]] + "</td></li>";
     }
     text += "</table>"
-    text += "<table style='width:40%'><tr><th>Total Distance</th><th>Time to Compute (milliseconds)</th></tr>";
+    text += "<table class='table table-bordered'><tr><th>Total Distance</th><th>Time to Compute (milliseconds)</th></tr>";
     text += "<tr><td>" + best_distance + "</td>";
     text += "<td>" + Number((t1-t0).toFixed(5)); + "</td></li>";
     msg.innerHTML = text;
   }
 };
-

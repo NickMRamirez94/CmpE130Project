@@ -1,29 +1,17 @@
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-
-    font-size: 125%;
+th{
+  background-color: #BBC3CC;
 }
 
-table{
-  margin: auto;
-}
-
-th, td{
+th,td{
   text-align: center;
+  font-size: 125%;
 }
 
 .top-buffer{
   margin-top: 35px;
 }
 
-th{
-  background-color: #6886b7;
-  color: white;
-}
-
 .intro-writing{
-  font-family: arial;
   font-size: 20px;
 }
 
@@ -45,4 +33,11 @@ th{
 .my-citation{
   float: right;
   padding-right: 30px;
+}
+
+.table-wrapper-2 {
+    display: block;
+    max-height: 300px;
+    overflow-y: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
 }

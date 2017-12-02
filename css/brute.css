@@ -1,16 +1,6 @@
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-
-    font-size: 125%;
-}
-
-table{
-  margin: auto;
-}
-
 th, td{
   text-align: center;
+  font-size: 125%;
 }
 
 .top-buffer{
@@ -19,7 +9,6 @@ th, td{
 
 th{
   background-color: red;
-  color: white;
 }
 
 .intro-writing{
@@ -45,4 +34,11 @@ th{
 .my-citation{
   float: right;
   padding-right: 30px;
+}
+
+.table-wrapper-2 {
+    display: block;
+    max-height: 300px;
+    overflow-y: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
 }
