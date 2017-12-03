@@ -11,6 +11,15 @@ th,td{
   margin-top: 35px;
 }
 
+.top-buffer-xl{
+ margin-top: 65px;
+}
+
+.col-centered{
+  float: none;
+  margin: 0 auto;
+}
+
 .intro-writing{
   font-size: 20px;
 }

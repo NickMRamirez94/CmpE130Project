@@ -38,7 +38,7 @@
 
     <div class="container" id="identifier">
 
-      <div class="row top-buffer">
+      <div class="row top-buffer-xl">
 
         <div class="col-sm-6">
           <div class="card">
@@ -72,7 +72,38 @@
 
       </div><!--End First Row-->
 
-      <div class="row top-buffer">
+      <div class="row top-buffer-xl">
+     	  <div class="col-sm-6 col-centered">
+	          <div class="card">
+	              <div class="card-block">
+	                 <h4 class="card-header text-center">Quick Summary</h4>
+	                  <p class="card-text text-center top-buffer">The following steps describe the algorithm in a straightforward manner:</p>
+	                   <ol>
+		                     <li>Start at the first city and mark it visited</li>
+		                     <li>Scan for the shortest path from the current city to another city that hasn't been visited yet</li>
+		                     <li>Move to that city and mark it as visited</li>
+		                     <li>Go to Step 6 if all cities have been marked as visited<li>
+		                     <li>Loop to Step 2</li>
+		                     <li>Return to starting city</li>
+	                   </ol>
+                     <p class="card-text text-center top-buffer">Pros to this method:</p>
+                     <ul>
+                       <li>Very fast</li>
+                       <li>Straightforward implementation</li>
+                       <li>Works for high input</li>
+                       <li>Generally falls somewhere in between worst case and best case scenario</li>
+                     </ul>
+                     <p class="card-text text-center top-buffer">Cons to this method:</p>
+                     <ul>
+                       <li>Very greedy and therefore doesn't always give optimal answer</li>
+                       <li>Can miss a better path</li>
+                     </ul>
+	               </div>
+	           </div>
+	       </div>
+      </div> <!--End Second Row-->
+
+      <div class="row top-buffer-xl">
 
         <div class="col-sm-6">
           <h4 class="display-5">To use this, please enter the number of cities you need to visit:</h4>

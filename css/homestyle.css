@@ -17,6 +17,9 @@
   margin-top: 35px;
 }
 
+.top-buffer-xl{
+ margin-top: 65px;
+}
 .button {
   display: inline-block;
   border-radius: 5px;
@@ -34,7 +37,7 @@
 
 .button span {
   cursor: pointer;
-  display: inline-block;
+  display: block;
   position: relative;
   transition: 0.5s;
 }
