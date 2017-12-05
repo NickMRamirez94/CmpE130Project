@@ -45,11 +45,7 @@
             <img class="card-img-top" src="bruteforce.jpg" alt="n2Graph">
             <div class="card-block">
               <h4 class="card-title text-center">How Does it Work?</h4>
-              <p class="card-text">This solution uses a very strong greedy strategy. This is because it
-              looks at the current city and will go to the closest city that it's connected to. It will continue to
-              do this until it visits all of the cities. This is a great strategy because the algorithm is a lot
-              faster than a brute force approach, but it can often miss a much shorter path due to its greedy
-              nature. Therefore, it provides a nice, yet often not optimal solution.
+              <p class="card-text">This solution works by generating every possible permutation of routes then evaluating each route for its distance. This generates the best route possible at the slowlest possible time.
               </p>
             </div>
           </div>
@@ -57,14 +53,11 @@
 
         <div class="col-sm-6">
           <div class="card">
-            <img class="card-img-top" style="height:300px" src="n2.png" alt="n2Graph">
+            <img class="card-img-top" style="height:300px" src="BigO.png" alt="n!Graph">
             <div class="card-block">
               <h4 class="card-title text-center">Running Time</h4>
-              <p class="card-text">The running time of the Nearest Neighbor Algorithm is
-              O(n^2), which is fairly fast given the issue at hand. Therefore, this makes for a decent choice seeing
-              that it will work for a large number of cities and it will give you the answer relatively quickly.
-              Additionally, the graph shows the rate of growth for this algorithm. For small input values the algorithm
-              still computes the solution quickly; however, fails to find the path quickly for large input values.
+              <p class="card-text">The running time of of the brute force algorthim is O(n!), which after just 10 cities entered 
+              	becomes almost impossible to compute in a resonable ammount of time.
               </p>
             </div>
           </div>
